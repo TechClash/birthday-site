@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, My Love!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6e6, #ffe6f0);
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      color: #d63384;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+    .message {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.2em;
+      color: #333;
+      max-width: 700px;
+      margin: auto;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .timeline {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .timeline h2 {
+      text-align: center;
+      color: #d63384;
+    }
+    .event {
+      background: #fff;
+      border-left: 4px solid #d63384;
+      margin: 20px 0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatHearts 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Happy Birthday, My Love! ❤️</header>
+  <div class="message">
+    <p>Today is all about you, and I just want you to know how much I love and appreciate every single moment with you. You're the light of my life, and I hope this little surprise makes your day just a bit more special. 💖</p>
+  </div>
+
+  <div class="gallery">
+    <img src="https://via.placeholder.com/200x250?text=Photo+1" alt="Photo 1">
+    <img src="https://via.placeholder.com/200x250?text=Photo+2" alt="Photo 2">
+    <img src="https://via.placeholder.com/200x250?text=Photo+3" alt="Photo 3">
+  </div>
+
+  <div class="timeline">
+    <h2>Our Journey Together</h2>
+    <div class="event">
+      <strong>Jan 2023:</strong> We met for the first time ❤️
+    </div>
+    <div class="event">
+      <strong>Apr 2023:</strong> Our first trip together ✈️
+    </div>
+    <div class="event">
+      <strong>Oct 2023:</strong> Celebrated your birthday in style 🎉
+    </div>
+  </div>
+
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    // Floating heart animation
+    const heartsContainer = document.getElementById('hearts');
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }, 300);
+  </script>
+</body>
+</html>
